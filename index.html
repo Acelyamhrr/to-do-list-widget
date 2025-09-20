@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Modern</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo-widget">
+        <div class="header">
+            <div class="date-box">
+                <div class="day-number" id="dayNumber">01</div>
+                <div class="day-name" id="dayName">MONDAY</div>
+                <div class="month-name" id="monthName">JANUARY</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-label" id="progress-label">0 / 0 tasks done</div>
+            </div>
+        </div>
+
+        <div class="add-task-container">
+            <input type="text" id="newTask" class="add-task-input" placeholder="What needs to be done?">
+            <button id="addBtn" class="add-btn">Add Task</button>
+        </div>
+
+        <div class="tasks-container" id="tasks">
+            <div class="empty-state">
+                No tasks yet.<br>
+                Add one above to get started!
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
