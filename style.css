@@ -5,269 +5,176 @@
 }
 
 body {
-    background: #F5EFE7;
-    color: #3A4F7A;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fafafa;
+    color: #111;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-}
-
-.todo-widget {
-    background: #ffffff;
-    border-radius: 16px;
-    width: 420px;
-    min-height: 500px;
     padding: 24px;
-    box-shadow: 
-        0 4px 6px -1px rgba(58, 79, 122, 0.1),
-        0 2px 4px -1px rgba(58, 79, 122, 0.06);
-    border: 1px solid rgba(58, 79, 122, 0.1);
 }
 
+/* Container */
+.todo-widget {
+    background: #fff;
+    width: 420px;
+    min-height: 480px;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+}
+
+/* Header */
 .header {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 24px;
-    align-items: flex-start;
 }
 
+/* Date */
 .date-box {
-    background: #3A4F7A;
-    color: white;
-    border-radius: 12px;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(58, 79, 122, 0.2);
+    align-items: center;
+    background: #fff;
 }
 
 .day-number {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 4px;
+    font-size: 26px;
+    font-weight: 600;
 }
 
 .day-name {
-    font-size: 11px;
-    font-weight: 500;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
+    font-size: 12px;
+    color: #555;
 }
 
 .month-name {
-    font-size: 10px;
-    font-weight: 500;
-    opacity: 0.7;
-    letter-spacing: 0.5px;
+    font-size: 11px;
+    color: #888;
 }
 
+/* Progress */
 .progress-container {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .progress-bar {
-    background: #F5EFE7;
-    border-radius: 8px;
-    height: 12px;
-    position: relative;
+    height: 8px;
+    background: #eee;
+    border-radius: 999px;
     overflow: hidden;
-    border: 1px solid rgba(58, 79, 122, 0.1);
 }
 
 .progress-fill {
-    background: linear-gradient(90deg, #3A4F7A 0%, #5A6F9A 100%);
     height: 100%;
     width: 0%;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 7px;
+    background: #111;
+    transition: width 0.3s ease;
 }
 
 .progress-label {
-    color: #3A4F7A;
     font-size: 12px;
-    font-weight: 500;
-    opacity: 0.8;
-    text-align: left;
+    color: #666;
 }
 
+/* Add task */
 .add-task-container {
-    background: #F5EFE7;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(58, 79, 122, 0.1);
     display: flex;
-    gap: 12px;
-    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .add-task-input {
-    background: white;
-    border: 1px solid rgba(58, 79, 122, 0.2);
-    border-radius: 8px;
-    color: #3A4F7A;
-    font-family: inherit;
-    font-size: 14px;
-    padding: 12px 16px;
     flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
     outline: none;
-    transition: all 0.2s ease;
 }
 
 .add-task-input:focus {
-    border-color: #3A4F7A;
-    box-shadow: 0 0 0 3px rgba(58, 79, 122, 0.1);
-}
-
-.add-task-input::placeholder {
-    color: rgba(58, 79, 122, 0.5);
+    border-color: #111;
 }
 
 .add-btn {
-    background: #3A4F7A;
-    border: none;
-    color: white;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 12px 20px;
+    padding: 10px 16px;
     border-radius: 8px;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
 .add-btn:hover {
-    background: #2A3F6A;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(58, 79, 122, 0.3);
+    opacity: 0.85;
 }
 
-.add-btn:active {
-    transform: translateY(0);
-}
-
+/* Tasks */
 .tasks-container {
-    background: #F5EFE7;
-    border-radius: 12px;
-    min-height: 200px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
     padding: 16px;
-    border: 1px solid rgba(58, 79, 122, 0.1);
+    min-height: 200px;
 }
 
 .task {
-    background: white;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 12px;
-    transition: all 0.2s ease;
-    border: 1px solid rgba(58, 79, 122, 0.08);
+    padding: 12px;
+    border-radius: 8px;
 }
 
-.task:last-child {
-    margin-bottom: 0;
-}
-
-.task:hover {
-    box-shadow: 0 2px 8px rgba(58, 79, 122, 0.1);
-    border-color: rgba(58, 79, 122, 0.15);
+.task + .task {
+    border-top: 1px solid #eee;
 }
 
 .task.completed {
-    opacity: 0.6;
-    background: #F8F9FA;
-}
-
-.task.completed .taskText {
-    text-decoration: line-through;
-    color: rgba(58, 79, 122, 0.6);
-}
-
-.task input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    appearance: none;
-    background: white;
-    border: 2px solid #3A4F7A;
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s ease;
-}
-
-.task input[type="checkbox"]:hover {
-    border-color: #2A3F6A;
-    box-shadow: 0 0 0 3px rgba(58, 79, 122, 0.1);
-}
-
-.task input[type="checkbox"]:checked {
-    background: #3A4F7A;
-    border-color: #3A4F7A;
-}
-
-.task input[type="checkbox"]:checked::after {
-    content: "✓";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
+    opacity: 0.5;
 }
 
 .taskText {
     flex: 1;
-    color: #3A4F7A;
-    font-weight: 500;
-    word-break: break-word;
 }
 
+/* Checkbox */
+.task input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Remove */
 .remove-btn {
-    background: transparent;
+    background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    color: rgba(58, 79, 122, 0.5);
+    color: #888;
 }
 
 .remove-btn:hover {
-    background: rgba(220, 38, 127, 0.1);
-    color: #dc267f;
+    color: #000;
 }
 
-.remove-icon {
-    width: 16px;
-    height: 16px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
+/* Empty */
 .empty-state {
     text-align: center;
-    color: rgba(58, 79, 122, 0.5);
-    font-size: 14px;
-    padding: 40px 20px;
-    line-height: 1.6;
-    font-style: italic;
+    color: #999;
+    padding: 32px 0;
+    font-size: 13px;
 }
